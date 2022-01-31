@@ -1,6 +1,5 @@
 class Doctor < User
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  # devise :database_authenticatable, :registerable,
-  #        :recoverable, :rememberable, :validatable
+  validates :phone_number, uniqueness: true , length: { in: 11..11}
+
+  devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
 end
