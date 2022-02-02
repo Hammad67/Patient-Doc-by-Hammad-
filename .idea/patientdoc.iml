@@ -47,7 +47,6 @@
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.10.2, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap_form (v4.5.0, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, RVM: ruby-3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.3.6, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.36.0, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v4.1.0, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.9, RVM: ruby-3.0.1) [gem]" level="application" />
@@ -110,6 +109,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sassc (v2.4.0, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sassc-rails (v2.1.2, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.1.0, RVM: ruby-3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simple_form (v5.1.0, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.0.2, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, RVM: ruby-3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.4.2, RVM: ruby-3.0.1) [gem]" level="application" />
