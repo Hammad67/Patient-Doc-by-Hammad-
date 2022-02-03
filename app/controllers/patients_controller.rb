@@ -1,4 +1,4 @@
- class PatientsController < ApplicationController
+class PatientsController < ApplicationController
   def index
     @patient = Patient.all
   end
@@ -13,7 +13,6 @@
 
   def create
     @patient = Patient.new(patient_params)
-
     if @patient.save
       redirect_to @patient
     else
@@ -27,7 +26,6 @@
 
   def update
     @patient = Patient.find(params[:id])
-
     if @patient.update(article_params)
       redirect_to @patient
     else
@@ -36,7 +34,8 @@
   end
 
   private
+
   def patient_params
-    params.require(:patient).permit(:first_name, :last_name,:email,:phone_number,:address,:date_of_birth)
+    params.require(:patient).permit(:first_name, :last_name, :email, :phone_number, :address, :date_of_birth)
   end
 end
