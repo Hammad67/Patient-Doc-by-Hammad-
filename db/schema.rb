@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_01_31_182623) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "encrypted_password"
     t.string "email"
-    t.datetime "date_of_birth", precision: 6
+    t.datetime "date_of_birth"
   end
 
 end

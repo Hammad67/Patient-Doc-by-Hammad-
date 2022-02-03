@@ -1,0 +1,11 @@
+<h4>Add Patient</h4>
+
+<%=simple_form_for @patient do |f| %>
+<%=f.input :first_name%>
+<%=f.input :last_name%>
+<%=f.input :email%>
+<%=f.input :phone_number%>
+<%=f.input :address%>
+<%=f.input :date_of_birth,:start_year=>1990%>
+<%=f.submit"Create Patient", class: "btn btn-success" %>
+<%end%>
