@@ -1,7 +1,7 @@
 <h1>Welcome to Patient Doctor</h1>
-<%if doctor_signed_in?%>
+<% if doctor_signed_in? %>
 
-<%else%>
+<% else %>
   <h1> Please click the link below for Sign-in </h1>
-  <%=link_to "Sign-in",new_doctor_session_path,class:"btn btn-success"%>
-<%end%>
+  <%= link_to "Sign-in", new_doctor_session_path, class: "btn btn-success" %>
+<% end %>
