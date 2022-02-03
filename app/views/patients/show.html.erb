@@ -6,5 +6,5 @@
 <tr><td><h3>PhoneNumber:<%=@patient.phone_number%></h3></td></tr>
 <tr><td><h3>Address:<%=@patient.address%></h3></td></tr>
 <tr><td><h3>Dateofbirth:<%=@patient.date_of_birth%></h3></td></tr>
-
 </table>
+<%=link_to "Create Appointments",new_patient_appointment_path(@patient) %>
