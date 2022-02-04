@@ -1,10 +1,11 @@
 class PatientsController < ApplicationController
+  before_action :get_patient, only: [:show, :edit, :update]
+
   def index
     @patient = Patient.all
   end
 
   def show
-    @patient = Patient.find(params[:id])
   end
 
   def new
@@ -21,11 +22,9 @@ class PatientsController < ApplicationController
   end
 
   def edit
-    @patient = Patient.find(params[:id])
   end
 
   def update
-    @patient = Patient.find(params[:id])
     if @patient.update(article_params)
       redirect_to @patient
     else
@@ -34,6 +33,10 @@ class PatientsController < ApplicationController
   end
 
   private
+
+  def get_patient
+    @patient = Patient.find(params[:id])
+  end
 
   def patient_params
     params.require(:patient).permit(:first_name, :last_name, :email, :phone_number, :address, :date_of_birth)
