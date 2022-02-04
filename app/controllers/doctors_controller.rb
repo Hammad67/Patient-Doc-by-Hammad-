@@ -1,3 +1,0 @@
-class DoctorsController < ApplicationController
-
-end
