@@ -1,4 +1,5 @@
 class Appointment < ApplicationRecord
-  belongs_to :doctor
-  belongs_to :patient
+  validates :date, presence: true
+  belongs_to :doctor, :class_name =>"User"
+  belongs_to :patient,:class_name =>"User"
 end
