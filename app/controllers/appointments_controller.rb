@@ -1,9 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :require_find, only: [:new, :create, :show, :edit,:update]
-
-  def require_find
-    @patient = Patient.find(params[:patient_id])
-  end
+  before_action :require_find, only: [:new, :create, :show, :edit,:update, :destroy]
 
   def new
     @appointment = @patient.appointments.build
@@ -34,6 +30,16 @@ class AppointmentsController < ApplicationController
     else
       render :edit
     end
+  end
+  def destroy
+    @appointment = @patient.appointments.find(params[:id])
+    if @appointment.destroy
+      redirect_to root_path
+    end
+  end
+  private
+  def require_find
+    @patient = Patient.find(params[:patient_id])
   end
   def appointment_params
     params.require(:appointment).permit(:date)
