@@ -8,6 +8,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = @patient.appointments.build(appointment_params)
     @appointment.doctor_id = current_doctor.id
+    binding.pry
     if @appointment.save
       redirect_to patient_appointment_path(@patient, @appointment)
     else
