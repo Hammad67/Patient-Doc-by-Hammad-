@@ -3,3 +3,5 @@
 <div><%=link_to "Edit",  edit_patient_appointment_path(@patient,@appointment),class:"btn btn-warning"%>
 <%=button_to "Delete",patient_appointment_path(@patient,@appointment),class:"btn btn-danger",method: :delete %>
 </div>
+
+<div><%=button_to "Visit",  new_patient_appointment_visit_path(@patient,@appointment),method: :get,class:"btn btn-warning"%></div>
