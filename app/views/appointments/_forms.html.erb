@@ -1,0 +1,5 @@
+<h1>Appointments Page</h1>
+<%= simple_form_for [@patient, @appointment] do |f| %>
+  <%= f.input :date %>
+  <%= f.submit "Create Appointment", class: "btn btn-success" %>
+<% end %>
