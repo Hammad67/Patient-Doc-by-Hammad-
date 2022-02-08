@@ -1,0 +1,8 @@
+<h1>Prescription Details</h1>
+<% @visit.prescriptions.each do |prescription| %>
+  <h6>DoseName:<%= prescription.dose_name %></h6>
+  <h6>DosageFrequency:<%= prescription.dosage_frequency %></h6>
+  <h6>DosageDetail:<%= prescription.dose_detail %></h6>
+<% end %>
+<div><%= link_to "Add New Prescription", new_patient_appointment_visit_prescription_path(@patient, @appointment, @visit), class: "btn btn-warning" %>
+  <%= link_to "Print Prescription" %></div>

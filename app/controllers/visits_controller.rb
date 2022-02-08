@@ -1,7 +1,7 @@
 class VisitsController < ApplicationController
+  before_action :get_find
+
   def new
-    @appointment = Appointment.find(params[:appointment_id])
-    @patient = Patient.find(params[:patient_id])
     if @appointment.visit.present?
       redirect_to root_path
     else
@@ -10,4 +10,16 @@ class VisitsController < ApplicationController
       flash[:notice] = "Patient has successfully visit"
     end
   end
+
+  def show
+    @visit = Visit.find(params[:id])
+
+  end
+end
+
+private
+
+def get_find
+  @appointment = Appointment.find(params[:appointment_id])
+  @patient = Patient.find(params[:patient_id])
 end

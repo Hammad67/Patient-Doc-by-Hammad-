@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dose_name: MyString
+  dosage_frequency: MyString
+  dose_detail: MyText
+  visit: one
+
+two:
+  dose_name: MyString
+  dosage_frequency: MyString
+  dose_detail: MyText
+  visit: two
