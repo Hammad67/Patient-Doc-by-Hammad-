@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
-  before_action :get_find, only: [:new, :create, :show, :edit, :update, :destroy]
-  before_action :get_find_appointments, only: [:show, :edit, :update, :destroy]
+  before_action :get_patient, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :get_appointment, only: [:show, :edit, :update, :destroy]
 
   def new
     @appointment = @patient.appointments.build
@@ -40,11 +40,11 @@ class AppointmentsController < ApplicationController
 
   private
 
-  def get_find
+  def get_patient
     @patient = Patient.find(params[:patient_id])
   end
 
-  def get_find_appointments
+  def get_appointment
     @appointment = @patient.appointments.find(params[:id])
   end
 
