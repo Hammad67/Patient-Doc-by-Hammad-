@@ -2,8 +2,6 @@ class VisitsController < ApplicationController
   before_action :get_appointment_and_patient
 
   def new
-    @appointment = Appointment.find(params[:appointment_id])
-    @patient = Patient.find(params[:patient_id])
     if @appointment.visit.present?
       redirect_to root_path
     else
@@ -15,7 +13,6 @@ class VisitsController < ApplicationController
 
   def show
     @visit = Visit.find(params[:id])
-
   end
 
   private
