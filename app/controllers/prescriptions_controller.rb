@@ -1,5 +1,5 @@
 class PrescriptionsController < ApplicationController
-  before_action :get_find
+  before_action :get_patient_appointment_visit
 
   def new
     @prescription = @visit.prescriptions.build
@@ -13,19 +13,25 @@ class PrescriptionsController < ApplicationController
       render :new
     end
   end
+
   def show
-    @prescription=@visit.prescriptions.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "print_prescription", template: 'prescriptions/print_prescription', formats: [:html]
+      end
+    end
   end
 
   private
 
   def prescription_params
-    params.require(:prescription).permit(:dose_name, :dosage_frequency ,:dose_detail)
+    params.require(:prescription).permit(:dose_name, :dosage_frequency, :dose_detail)
   end
 
-  def get_find
-    @patient=Patient.find(params[:patient_id])
-    @appointment=Appointment.find(params[:appointment_id])
+  def get_patient_appointment_visit
+    @patient = Patient.find(params[:patient_id])
+    @appointment = Appointment.find(params[:appointment_id])
     @visit = Visit.find(params[:visit_id])
   end
 end
