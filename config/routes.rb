@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :doctors, controllers: { sessions: 'doctors/sessions' }
   resources :patients do
-    resources :appointments
+    resources :appointments do
+      resources :visits
+    end
   end
   root to: "homes#index"
 end
