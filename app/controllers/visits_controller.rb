@@ -1,5 +1,5 @@
 class VisitsController < ApplicationController
-  before_action :get_find
+  before_action :get_appointment_and_patient
 
   def new
     if @appointment.visit.present?
@@ -13,13 +13,12 @@ class VisitsController < ApplicationController
 
   def show
     @visit = Visit.find(params[:id])
-
   end
-end
 
-private
+  private
 
-def get_find
-  @appointment = Appointment.find(params[:appointment_id])
-  @patient = Patient.find(params[:patient_id])
+  def get_appointment_and_patient
+    @appointment = Appointment.find(params[:appointment_id])
+    @patient = Patient.find(params[:patient_id])
+  end
 end
