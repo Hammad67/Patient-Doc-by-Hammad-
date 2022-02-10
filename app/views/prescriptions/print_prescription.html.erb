@@ -1,19 +1,15 @@
-
-<div id="maindiv"><%= link_to "Add New Prescription", new_patient_appointment_visit_prescription_path, class: "btn btn-warning" %>
-<h1>Patient-Doctor-Management-System</h1>
-<div class="bg-primary">
-  jbdkjvnhadjkn
+<div id="top-div-heading">
+  <h1>Patient-Doctor-Management-System</h1>
 </div>
-  <div id="maindiv">jhabjhbsjhkcbjkbjk</div>
-<hr>
-<strong>DoctorName:<%= current_doctor.first_name %></strong><br><br>
-<strong>DoctorNumber:<%= current_doctor.phone_number %></strong><br><br>
-<strong>PatientName:<%= @patient.first_name %></strong><br><br>
-<hr>
-<% @visit.prescriptions.each do |prescription| %>
-  <h4>DoseName:<%= prescription.dose_name %></h4>
-  <h4>DosageFrequency:<%= prescription.dosage_frequency %></h4>
-  <h4>DosageDetail:<%= prescription.dose_detail %></h4>
-  <br><br><br>
-<% end %>
-
+<div id="centeral-div">
+  <strong>DoctorName:<%= current_doctor.first_name %></strong><br><br>
+  <strong>DoctorNumber:<%= current_doctor.phone_number %></strong><br><br>
+  <strong>PatientName:<%= @patient.first_name %></strong><br><br>
+  <hr>
+  <% @visit.prescriptions.each do |prescription| %>
+    <h4>DoseName:<%= prescription.dose_name %></h4>
+    <h4>DosageFrequency:<%= prescription.dosage_frequency %></h4>
+    <h4>DosageDetail:<%= prescription.dose_detail %></h4>
+    <br><br><br>
+  <% end %>
+</div>
