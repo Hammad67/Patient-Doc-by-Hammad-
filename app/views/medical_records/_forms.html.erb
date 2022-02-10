@@ -1,0 +1,9 @@
+<%= simple_form_for [@patient,@medical] do |f| %>
+  <%= f.input :patient_bp %>
+  <%= f.input :patient_weight %>
+  <%= f.input :lab_test %>
+  <%= f.input :dieases %>
+  <%= f.input :dieases_detail %>
+  <%= f.input :lab_test_results %>
+  <%= f.submit "Create Medical Record", class: "btn btn-success" %>
+<% end %>
