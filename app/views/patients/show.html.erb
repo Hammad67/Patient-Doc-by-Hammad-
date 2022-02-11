@@ -18,10 +18,10 @@
   <tr>
     <td><h3>Dateofbirth:<%= @patient.date_of_birth %></h3></td>
   </tr>
-    <% @patient.appointments.each do |app| %>
-      <tr>
-        <td><h3>DateofAppointment:<%= app.date %></h3></td>
-      </tr>
-    <% end %>
+  <% @patient.appointments.each do |app| %>
+    <tr>
+      <td><h3>DateofAppointment:<%= app.date %></h3></td>
+    </tr>
+  <% end %>
 </table>
 <%= link_to "Create New Appointment", new_patient_appointment_path(@patient), class: "btn btn-success" %>

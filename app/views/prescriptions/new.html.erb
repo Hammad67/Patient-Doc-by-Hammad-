@@ -1,0 +1,7 @@
+<h1>Prescription Page</h1>
+<%= simple_form_for [@patient, @appointment, @visit, @prescription] do |f| %>
+  <%= f.input :dose_name %>
+  <%= f.input :dosage_frequency %>
+  <%= f.input :dose_detail %>
+  <%= f.submit "Create Prescription", class: "btn btn-success" %>
+<% end %>
