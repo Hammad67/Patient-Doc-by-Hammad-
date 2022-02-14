@@ -1,6 +1,8 @@
 <h1>Appointments Page</h1>
-<%= simple_form_for [@patient, @appointment] do |f| %>
-
-  <%= f.input :date %>
-  <%= f.submit "Create Appointment", class: "btn btn-success" %>
-<% end %>
+<div class="card card p-3 bg-light card-body">
+  <%= simple_form_for [@patient, @appointment] do |f| %>
+    <%= f.input :date %>
+    <div class="d-flex justify-content-center m-3"> <%= f.submit "Create Appointment", class: "btn btn-success d-flex justify-content-center" %>
+    </div>
+  <% end %>
+  </div>

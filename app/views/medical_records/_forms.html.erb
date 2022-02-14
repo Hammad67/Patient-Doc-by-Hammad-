@@ -1,9 +1,11 @@
-<%= simple_form_for [@patient,@medical] do |f| %>
-  <%= f.input :patient_bp %>
-  <%= f.input :patient_weight %>
-  <%= f.input :lab_test %>
-  <%= f.input :dieases %>
-  <%= f.input :dieases_detail %>
-  <%= f.input :lab_test_results %>
-  <%= f.submit "Create Medical Record", class: "btn btn-success" %>
-<% end %>
+<div class="card card p-3 bg-light card-body ">
+  <%= simple_form_for [@patient, @medical] do |f| %>
+    <%= f.input :patient_bp %>
+    <%= f.input :patient_weight %>
+    <%= f.input :lab_test %>
+    <%= f.input :dieases %>
+    <%= f.input :dieases_detail %>
+    <%= f.input :lab_test_results %>
+    <div class="d-flex justify-content-center m-3"><%= f.submit  class: "btn btn-success" %></div>
+  <% end %>
+</div>

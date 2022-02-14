@@ -1,27 +1,32 @@
-<h1>Registered-patient</h1>
-<table>
-  <tr>
-    <td><h3>FirstName:<%= @patient.first_name %></h3></td>
-  </tr>
-  <tr>
-    <td><h3>LastName:<%= @patient.last_name %></h3></td>
-  </tr>
-  <tr>
-    <td><h3>Email:<%= @patient.email %></h3></td>
-  </tr>
-  <tr>
-    <td><h3>PhoneNumber:<%= @patient.phone_number %></h3></td>
-  </tr>
-  <tr>
-    <td><h3>Address:<%= @patient.address %></h3></td>
-  </tr>
-  <tr>
-    <td><h3>Dateofbirth:<%= @patient.date_of_birth %></h3></td>
-  </tr>
-  <% @patient.appointments.each do |app| %>
-    <tr>
-      <td><h3>DateofAppointment:<%= app.date %></h3></td>
-    </tr>
-  <% end %>
-</table>
-<%= link_to "Create New Appointment", new_patient_appointment_path(@patient), class: "btn btn-success" %>
+<div class="d-flex justify-content-center">
+  <div class="card " style="width: 38rem;">
+    <%= image_tag("patient2.png", class: "card-img-top") %>
+    <div class="card-body card text-dark bg-white ">
+      <hr>
+      <h3 class="card-title"><%= @patient.first_name %>,s Record</h3>
+      <hr>
+      <ul class="list-group list-group-flush d-grid gap-3">
+        <li class="list-group-item fw-bold">FirstName:<%= @patient.first_name %></li>
+        <li class="list-group-item fw-bold"> LastName:<%= @patient.last_name %></li>
+        <li class="list-group-item fw-bold">Email:<%= @patient.email %></li>
+        <li class="list-group-item fw-bold">PhoneNumber:<%= @patient.phone_number %></li>
+        <li class="list-group-item fw-bold">Address:<%= @patient.address %></li>
+        <li class="list-group-item fw-bold">Dateofbirth:<%= @patient.date_of_birth %></li>
+        <% @patient.appointments.each do |app| %>
+          <li class="list-group-item fw-bold">DateofAppointment:<%= app.date %></li>
+        <% end %>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-4">
+              <a href="<%= new_patient_appointment_path(@patient) %>" class="btn btn-primary">GetNewAppointment</a>
+            </div>
+            <div class="col-4"><%= link_to "Back", root_path, class: "btn btn-secondary" %></div>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</div>

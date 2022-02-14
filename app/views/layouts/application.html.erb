@@ -10,6 +10,12 @@
   <%= stylesheet_link_tag "application", "header", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "application", "footer", "data-turbo-track": "reload" %>
   <%= wicked_pdf_stylesheet_link_tag "application", "wickedpdf", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "form", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "login", "data-turbo-track": "reload" %>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+    crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark ">
@@ -61,31 +67,39 @@
   <%= yield %>
 </div>
 <hr>
-<footer class="bg-light text-center text-lg-start">
+
+<footer class="bg-light text-center text-sm-start ">
   <!-- Grid container -->
   <div class="container p-4">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Footer text</h5>
+        <h5 class="text-uppercase">PDMS Details</h5>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-          aliquam voluptatem veniam, est atque cumque eum delectus sint!
+          Would you like a jelly baby? The past is another country. 1987's just the Isle of Wight. Rest is for the
+          weary, sleep is for the dead. I feel like a hungry man eager for the feast! There are fixed points throughout
+          time where things must stay exactly the way they are. This is not one of them. This is an opportunity!
+          Whatever happens here will create its own timeline, its own reality, a temporal tipping point. The future
+          revolves around you, here, now, so do good! If you could touch the alien sand and hear the cries of strange
+          birds, and watch them wheel in another sky, would that satisfy you?
         </p>
       </div>
       <!--Grid column-->
 
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Footer text</h5>
+        <h5 class="text-uppercase">PDMS Details</h5>
 
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
           molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+          aliquam voluptatem veniam, est atque cumque eum delectus sint!Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Iste atque ea quis
+          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
           aliquam voluptatem veniam, est atque cumque eum delectus sint!
+
         </p>
       </div>
       <!--Grid column-->
@@ -97,9 +111,9 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <a class="text-dark" href="<%root_path %>">www.PatientDoctor.com</a>
   </div>
-  <!-- Copyright -->
 </footer>
+
 </body>
 </html>
