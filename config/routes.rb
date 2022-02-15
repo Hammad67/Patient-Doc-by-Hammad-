@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :doctors, controllers: { sessions: 'doctors/sessions' }
   resources :patients do
+    resources :medical_records
     resources :appointments do
       resources :visits do
         resources :prescriptions

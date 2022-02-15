@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_08_090617) do
+ActiveRecord::Schema.define(version: 2022_02_10_112055) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,6 +48,19 @@ ActiveRecord::Schema.define(version: 2022_02_08_090617) do
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
 
+  create_table "medical_records", force: :cascade do |t|
+    t.integer "patient_bp"
+    t.integer "patient_weight"
+    t.string "lab_test"
+    t.string "dieases"
+    t.text "dieases_detail"
+    t.string "lab_test_results"
+    t.integer "patient_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_medical_records_on_patient_id"
+  end
+
   create_table "prescriptions", force: :cascade do |t|
     t.string "dose_name"
     t.string "dosage_frequency"
@@ -81,6 +94,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_090617) do
 
   add_foreign_key "appointments", "users", column: "doctor_id"
   add_foreign_key "appointments", "users", column: "patient_id"
+  add_foreign_key "medical_records", "users", column: "patient_id"
   add_foreign_key "prescriptions", "visits"
   add_foreign_key "visits", "appointments"
 end

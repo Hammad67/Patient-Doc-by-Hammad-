@@ -1,2 +1,4 @@
 <h1>Prescription</h1>
-<div><%= link_to "New Prescription",  new_patient_appointment_visit_prescription_path(@patient,@appointment,@visit),class:"btn btn-warning" %></div>
+<div><%= link_to "New Prescription", new_patient_appointment_visit_prescription_path(@patient, @appointment, @visit), class: "btn btn-warning" %>
+  <%= link_to "Create Medical History", new_patient_medical_record_path(@patient), class: "btn btn-secondary" %>
+</div>
