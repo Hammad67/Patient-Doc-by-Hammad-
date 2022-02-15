@@ -7,9 +7,9 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = @patient.appointments.build(appointment_params)
-    @appointment.doctor_id = current_doctor.id
-    if @appointment.save
+    @appointment =CreateAppointment.call(currentdoctor:current_doctor.id,patient:@patient.id,appointment_params:appointment_params)
+    if @appointment.success?
+      @appointment=@appointment.appointment
       redirect_to patient_appointment_path(@patient, @appointment)
     else
       render :new
