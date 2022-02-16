@@ -6,11 +6,13 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
-    @prescription = @visit.prescriptions.new(prescription_params)
-    if @prescription.save
+    @prescription = CreatePrescription.call(prescription_params: prescription_params, visit: @visit.id)
+    if @prescription.success?
+      @prescription = @prescription.prescription
       redirect_to patient_appointment_visit_prescription_path(@patient, @appointment, @visit, @prescription)
     else
-      render :new
+      @prescription = @prescription.prescription
+      render :new, status: :unprocessable_entity
     end
   end
 

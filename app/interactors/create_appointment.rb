@@ -3,7 +3,6 @@ class CreateAppointment
 
   def call
     appointment = Appointment.new(context.appointment_params)
-    binding.pry
     appointment.doctor_id=context.currentdoctor
     appointment.patient_id=context.patient
     if appointment.save
