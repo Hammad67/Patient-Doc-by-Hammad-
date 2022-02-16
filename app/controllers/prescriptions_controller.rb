@@ -8,6 +8,7 @@ class PrescriptionsController < ApplicationController
   def create
     @prescription = @visit.prescriptions.new(prescription_params)
     if @prescription.save
+      PatientMailer.with(prescription: @prescription).welcome_email.deliver_now
       redirect_to patient_appointment_visit_prescription_path(@patient, @appointment, @visit, @prescription)
     else
       render :new
