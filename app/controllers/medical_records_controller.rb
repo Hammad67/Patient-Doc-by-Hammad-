@@ -28,6 +28,7 @@ class MedicalRecordsController < ApplicationController
       redirect_to patient_medical_record_path(@patient, @medical)
     else
       render :edit, status: :unprocessable_entity
+
     end
   end
 

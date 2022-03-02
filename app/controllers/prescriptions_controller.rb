@@ -23,7 +23,7 @@ class PrescriptionsController < ApplicationController
       format.pdf do
         render pdf: "print_prescription",
                template: 'prescriptions/print_prescription',
-               formats: [:html], layout: "application",
+               formats: [:pdf], layout: "application",
                :page_height => '8in', :page_width => '7in'
       end
     end
