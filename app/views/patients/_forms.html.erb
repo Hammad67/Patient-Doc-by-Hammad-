@@ -1,0 +1,15 @@
+<%= simple_form_for @patient do |f| %>
+    <div class="card card p-3 bg-dark">
+      <h4 style="color: aliceblue">Add Patient</h4>
+      <div style= "class:card-body bd-light;color:white">
+
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :email %>
+        <%= f.input :phone_number %>
+        <%= f.input :address %>
+        <%= f.input :date_of_birth %>
+        <%= f.submit "Create Patient", id:"button-id",class: "btn btn-success" %>
+  <% end %>
+ </div>
+ </div>

@@ -1,16 +1,2 @@
-<%= stylesheet_link_tag "application", "form", "data-turbo-track": "reload" %>
-<%= simple_form_for @patient do |f| %>
-  <div class="card card p-3 bg-light">
-    <h4>Add Patient</h4>
-    <div class="card-body">
+<%=render "forms" %>>
 
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :email %>
-      <%= f.input :phone_number %>
-      <%= f.input :address %>
-      <%= f.input :date_of_birth %>
-      <%= f.submit "Create Patient", id:"button-id",class: "btn btn-success" %>
-<% end %>
-</div>
-</div>

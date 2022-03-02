@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+
   <%= javascript_importmap_tags %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "application", "header", "data-turbo-track": "reload" %>
@@ -12,10 +13,7 @@
   <%= wicked_pdf_stylesheet_link_tag "application", "wickedpdf", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "application", "form", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "application", "login", "data-turbo-track": "reload" %>
-  <script
-    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-    crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark ">
@@ -114,6 +112,6 @@
     <a class="text-dark" href="<%root_path %>">www.PatientDoctor.com</a>
   </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
 </html>

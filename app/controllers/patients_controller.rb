@@ -10,6 +10,11 @@ class PatientsController < ApplicationController
 
   def new
     @patient = Patient.new
+    respond_to do |format|
+      format.js
+      format.html
+
+    end
   end
 
   def create

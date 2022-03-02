@@ -2,5 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
+import "custom/homemodal"
+import "controllers/homemodal"
 //=require_tree
 //= require jquery
