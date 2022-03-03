@@ -1,15 +1,11 @@
-<%= simple_form_for [@patient, @medical] do |f| %>
-  <% if @medical.errors.full_messages.any? %>
-    <% @medical.errors.full_messages.each do |error_message| %>
-      <p class="text-danger"><%= error_message %> <br/>
-      </p>
-    <% end %>
+<div class="card card p-3 bg-light card-body ">
+  <%= simple_form_for [@patient, @medical] do |f| %>
+    <%= f.input :patient_bp %>
+    <%= f.input :patient_weight %>
+    <%= f.input :lab_test %>
+    <%= f.input :dieases %>
+    <%= f.input :dieases_detail %>
+    <%= f.input :lab_test_results %>
+    <div class="d-flex justify-content-center m-3"><%= f.submit  class: "btn btn-success" %></div>
   <% end %>
-  <%= f.input :patient_bp, placeholder: 'Enter patient bloop pressure' %>
-  <%= f.input :patient_weight, placeholder: 'Enter patient weight' %>
-  <%= f.input :lab_test, placeholder: 'Patient tests with respect to dieases' %>
-  <%= f.input :dieases, placeholder: "Enter dieases....  " %>
-  <%= f.input :dieases_detail, placeholder: "Describe the seriousness of dieases" %>
-  <%= f.input :lab_test_results, placeholder: "What are the results of Lab tests" %>
-  <%= f.submit "Create Medical Record", class: "btn btn-success" %>
-<% end %>
+</div>

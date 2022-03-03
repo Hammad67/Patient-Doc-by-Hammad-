@@ -4,3 +4,7 @@
 //= link_tree ../builds
 //=link active_admin.scss
 //=link wickedpdf.scss
+//= link header.css
+//= link footer.css
+//= link login.css
+//= link form.css

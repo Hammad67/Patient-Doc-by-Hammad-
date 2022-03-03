@@ -2,12 +2,12 @@
 <table class="table table-dark">
   <thead>
   <tr>
-    <th scope="col">BloodPressure</th>
-    <th scope="col">Patient-Weight</th>
-    <th scope="col">Lab-test</th>
-    <th scope="col">Dieases</th>
-    <th scope="col">Dieases-Details</th>
-    <th scope="col">Test-Results</th>
+    <th scope="col-1">BloodPressure</th>
+    <th scope="col-1">PatientWeight</th>
+    <th scope="col-3">Lab-test</th>
+    <th scope="col-2">Dieases</th>
+    <th scope="col-4">Dieases-Details</th>
+    <th scope="col-1">Test-Results</th>
   </tr>
   </thead>
   <% @patient.medical_records.each do |patients| %>
@@ -15,21 +15,58 @@
     <tr>
       <td><%= patients.patient_bp %></td>
       <td><%= patients.patient_weight %></td>
-      <td><%= patients.lab_test %>></td>
+      <td><%= patients.lab_test %></td>
       <td><%= patients.dieases %></td>
-      <td><%= patients.dieases_detail %>></td>
+      <td><%= patients.dieases_detail %></td>
       <td><%= patients.lab_test_results %></td>
     </tr>
     </tbody>
   <% end %>
 </table>
-<h1>Current Medical Report</h1>
-<h6>PatientBloodPressure:
-  <%= @medical.patient_bp %></h6>
-<h6>Patient-Weight:<%= @medical.patient_weight %></h6>
-<h6>Lab-test:<%= @medical.lab_test %></h6>
-<h6>Dieases:<%= @medical.dieases %></h6>
-<h6>Dieases-Details:<%= @medical.dieases_detail %></h6>
-<h6>Test-Results:<%= @medical.lab_test_results %></h6>
+<div class="card card p-3 bg-light card-body"><h1>Current Medical Report</h1></div>
+<div class="mt-4 p-5 bg-light text-dark rounded shadow p-3 mb-5 bg-body rounded">
+  <ul class="list-group list-group-flush d-grid gap-3">
+    <li class="list-group-item fw-bold">
+      <div class="row">
+        <div class="col-3"><h6>PatientBloodPressure:</h6></div>
+        <div class="col-9"><h6><%=@medical.patient_bp %></h6></div>
+      </div>
+    </li>
+    <li class="list-group-item fw-bold">
+      <div class="row">
+        <div class="col-3"><h6>PatinetWeight:</h6></div>
+        <div class="col-9"><h6><%=@medical.patient_weight%></h6></div>
+      </div>
+    </li>
+    <li class="list-group-item fw-bold">
+      <div class="row">
+        <div class="col-3"><h6>Labtest:</h6></div>
+        <div class="col-9"><h6><%=@medical.lab_test %></h6></div>
+      </div>
+    </li>
+    <li class="list-group-item fw-bold">
+      <div class="row">
+        <div class="col-3"><h6>Dieases:</h6></div>
+        <div class="col-9"><h6><%=@medical.dieases %></h6></div>
+      </div>
+    </li>
+    <li class="list-group-item fw-bold">
+      <div class="row">
+        <div class="col-3"><h6>DieasesDetail:</h6></div>
+        <div class="col-9"><h6><%=@medical.dieases_detail%></h6></div>
+      </div>
+    </li>
+    <li class="list-group-item fw-bold">
+      <div class="row">
+        <div class="col-3"><h6>LabtestResult:</h6></div>
+        <div class="col-9"><h6><%=@medical.lab_test_results %></h6></div>
+      </div>
+    </li>
+  </ul>
 <br><br><br>
-<div><%= link_to "Update Medical History", edit_patient_medical_record_path(@patient), class: "btn btn-info" %></div>
+ <div class="row">
+<div class="col-4"><%= link_to "Update Medical History", edit_patient_medical_record_path(@patient), class: "btn btn-warning" %></div>
+  <div class="col-4"><%= link_to "Back", root_path, class: "btn btn-secondary" %>
+  </div>
+</div>
+</div>

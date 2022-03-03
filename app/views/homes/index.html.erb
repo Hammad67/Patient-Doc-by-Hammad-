@@ -1,9 +1,18 @@
-<h1>Welcome to Patient Doctor</h1>
-<% if doctor_signed_in? %>
-  <%= link_to "Add-Patient", new_patient_path, class: "btn btn-success" %>
-  <%= link_to "Show Patient list", patients_path, class: "btn btn-success" %>
-  <%= button_to "Sign-out", destroy_doctor_session_path, method: :delete, class: "btn btn-danger" %>
-<% else %>
-  <h1> Please click the link below for Sign-in </h1>
-  <%= link_to "Sign-in", new_doctor_session_path, class: "btn btn-success" %>
-<% end %>
+<div class="mt-4 p-5 bg-dark text-white rounded">
+  <h3 class="display-4">Welcome to PDMS</h3>
+  <p class="lead">
+    Doctors, or GPs (general practitioners), provide primary and continuing medical care for patients. They diagnose
+    physical and mental illnesses, disorders and injuries, and prescribe medications and treatment to promote or restore
+    good health, taking account of physical, emotional and social factors..</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <% if doctor_signed_in? %>
+      <a class="btn btn-primary btn-lg" href="patients/new" role="button">Add new Patient</a>
+      <a class="btn btn-success btn-lg" href="/patients" role="button">All Patients</a>
+    <% else %>
+      <h3> Please click the link below for Sign-in </h3>
+      <%= link_to "Sign-in", new_doctor_session_path, class: "btn btn-success" %>
+    <% end %>
+    </p>
+    </div>
