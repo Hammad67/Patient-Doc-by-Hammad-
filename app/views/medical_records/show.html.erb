@@ -29,44 +29,44 @@
     <li class="list-group-item fw-bold">
       <div class="row">
         <div class="col-3"><h6>PatientBloodPressure:</h6></div>
-        <div class="col-9"><h6><%=@medical.patient_bp %></h6></div>
+        <div class="col-9"><h6><%= @medical_record.patient_bp %></h6></div>
       </div>
     </li>
     <li class="list-group-item fw-bold">
       <div class="row">
         <div class="col-3"><h6>PatinetWeight:</h6></div>
-        <div class="col-9"><h6><%=@medical.patient_weight%></h6></div>
+        <div class="col-9"><h6><%= @medical_record.patient_weight %></h6></div>
       </div>
     </li>
     <li class="list-group-item fw-bold">
       <div class="row">
         <div class="col-3"><h6>Labtest:</h6></div>
-        <div class="col-9"><h6><%=@medical.lab_test %></h6></div>
+        <div class="col-9"><h6><%= @medical_record.lab_test %></h6></div>
       </div>
     </li>
     <li class="list-group-item fw-bold">
       <div class="row">
         <div class="col-3"><h6>Dieases:</h6></div>
-        <div class="col-9"><h6><%=@medical.dieases %></h6></div>
+        <div class="col-9"><h6><%= @medical_record.dieases %></h6></div>
       </div>
     </li>
     <li class="list-group-item fw-bold">
       <div class="row">
         <div class="col-3"><h6>DieasesDetail:</h6></div>
-        <div class="col-9"><h6><%=@medical.dieases_detail%></h6></div>
+        <div class="col-9"><h6><%= @medical_record.dieases_detail %></h6></div>
       </div>
     </li>
     <li class="list-group-item fw-bold">
       <div class="row">
         <div class="col-3"><h6>LabtestResult:</h6></div>
-        <div class="col-9"><h6><%=@medical.lab_test_results %></h6></div>
+        <div class="col-9"><h6><%= @medical_record.lab_test_results %></h6></div>
       </div>
     </li>
   </ul>
-<br><br><br>
- <div class="row">
-<div class="col-4"><%= link_to "Update Medical History", edit_patient_medical_record_path(@patient), class: "btn btn-warning" %></div>
-  <div class="col-4"><%= link_to "Back", root_path, class: "btn btn-secondary" %>
+  <br><br><br>
+  <div class="row">
+    <div class="col-4"><%= link_to "Update Medical History", edit_patient_medical_record_path(@patient), class: "btn btn-warning" %></div>
+    <div class="col-4"><%= link_to "Back", root_path, class: "btn btn-secondary" %>
+    </div>
   </div>
-</div>
 </div>

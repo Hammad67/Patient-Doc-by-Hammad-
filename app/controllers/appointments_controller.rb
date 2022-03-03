@@ -7,12 +7,12 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = @patient.appointments.build(appointment_params)
-    @appointment.doctor_id = current_doctor.id
-    if @appointment.save
+    result = CreateAppointment.call(current_doctor_id: current_doctor.id, patient_id: @patient.id, appointment_params: appointment_params)
+    @appointment = result.appointment
+    if result.success?
       redirect_to patient_appointment_path(@patient, @appointment)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
