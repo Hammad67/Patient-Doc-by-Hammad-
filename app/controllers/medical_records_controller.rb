@@ -7,12 +7,11 @@ class MedicalRecordsController < ApplicationController
   end
 
   def create
-    @medical = CreateMedicalRecord.call(medical_parms: medical_params, patinet: @patient.id)
-    if @medical.success?
-      @medical = @medical.medical
+    result = CreateMedicalRecord.call(medical_params: medical_params, patient: @patient.id)
+    @medical = result.medical
+    if result.success?
       redirect_to patient_medical_record_path(@patient, @medical)
     else
-      @medical = @medical.medical
       render :new, status: :unprocessable_entity
     end
   end

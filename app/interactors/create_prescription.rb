@@ -4,12 +4,7 @@ class CreatePrescription
   def call
     prescription = Prescription.new(context.prescription_params)
     prescription.visit_id = context.visit
-    if prescription.save
-      context.prescription = prescription
-    else
-      context.prescription = prescription
-      context.fail!
-    end
-
+    context.prescription = prescription
+    context.fail! unless prescription.save
   end
 end

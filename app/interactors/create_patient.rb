@@ -3,11 +3,7 @@ class CreatePatient
 
   def call
     patient = Patient.new(context.patient_params)
-    if patient.save
-      context.patient = patient
-    else
-      context.patient = patient
-      context.fail!
-    end
+    context.patient = patient
+    context.fail! unless patient.save
   end
 end

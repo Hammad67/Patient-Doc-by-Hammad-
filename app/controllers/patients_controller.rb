@@ -14,11 +14,10 @@ class PatientsController < ApplicationController
 
   def create
     result = CreatePatient.call(patient_params: patient_params)
+    @patient = result.patient
     if result.success?
-      @patient = result.patient
       redirect_to @patient
     else
-      @patient = result.patient
       render :new, status: :unprocessable_entity
     end
   end
