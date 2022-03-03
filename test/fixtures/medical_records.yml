@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_bp: 1
+  patient_weight: 1
+  lab_test: MyString
+  dieases: MyString
+  dieases_detail: MyText
+  lab_test_results: MyString
+  patient: one
+
+two:
+  patient_bp: 1
+  patient_weight: 1
+  lab_test: MyString
+  dieases: MyString
+  dieases_detail: MyText
+  lab_test_results: MyString
+  patient: two
