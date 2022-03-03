@@ -11,9 +11,8 @@ gem "sprockets-rails"
 gem 'bootstrap', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
-gem "figaro"
-gem 'uri'
 
+gem "figaro"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
@@ -22,7 +21,7 @@ gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-
+gem "interactor"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 

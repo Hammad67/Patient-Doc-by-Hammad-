@@ -185,6 +185,7 @@ GEM
     importmap-rails (1.0.2)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    interactor (3.1.2)
     io-console (0.5.11)
     io-wait (0.2.1)
     irb (1.4.1)
@@ -330,7 +331,6 @@ GEM
       nokogiri (>= 1.6, < 2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    uri (0.10.1)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -369,6 +369,7 @@ DEPENDENCIES
   figaro
   importmap-rails
   inherited_resources!
+  interactor
   jbuilder
   jquery-rails
   pry
@@ -384,7 +385,6 @@ DEPENDENCIES
   turbo-rails
   twilio-ruby
   tzinfo-data
-  uri
   web-console
   webdrivers
   wicked_pdf

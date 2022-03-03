@@ -3,7 +3,7 @@ class Patient < User
   has_many :medical_records, dependent: :destroy
   has_many :doctors, through: :appointments
   validates_presence_of :first_name, :last_name, :email, :phone_number
-  validates :phone_number, uniqueness: true, length: { is: 13 }
+  # validates :phone_number, uniqueness: true, length: { is: 13 }
   validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP, uniqueness: true
 
   def self.columns
