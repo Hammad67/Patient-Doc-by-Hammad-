@@ -11,7 +11,7 @@ class MedicalRecordsController < ApplicationController
     if @medical.save
       redirect_to patient_medical_record_path(@patient, @medical)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class MedicalRecordsController < ApplicationController
     if @medical.update(medical_params)
       redirect_to patient_medical_record_path(@patient, @medical)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
