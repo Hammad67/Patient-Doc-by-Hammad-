@@ -7,7 +7,7 @@ class MedicalRecordsController < ApplicationController
   end
 
   def create
-    result = CreateMedicalRecord.call(medical_params: medical_params, patient: @patient.id)
+    result = CreateMedicalRecord.call(medical_params: medical_params, patient_id: @patient.id)
     @medical = result.medical
     if result.success?
       redirect_to patient_medical_record_path(@patient, @medical)

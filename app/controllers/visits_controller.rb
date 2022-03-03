@@ -6,7 +6,7 @@ class VisitsController < ApplicationController
       flash[:notice] = "Patient has already visited please create a New appointment for visit!"
       redirect_to root_path
     else
-      result = CreateVisit.call(appointment: @appointment.id)
+      result = CreateVisit.call(appointment_id: @appointment.id)
       @visit = result.visit
       if result.success?
         redirect_to patient_appointment_visit_path(@patient, @appointment, @visit)
