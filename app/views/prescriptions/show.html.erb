@@ -1,11 +1,30 @@
-<h1>Prescription Details</h1>
 <% @visit.prescriptions.each do |prescription| %>
-  <h6>DoseName:<%= prescription.dose_name %></h6>
-  <h6>DosageFrequency:<%= prescription.dosage_frequency %></h6>
-  <h6>DosageDetail:<%= prescription.dose_detail %></h6>
-  <br><br><br>
+  <div class="card card p-3 bg-light card-body"><h1>Prescription Details</h1></div>
+  <div class="mt-4 p-5 bg-light text-dark rounded shadow p-3 mb-5 bg-body rounded">
+    <ul class="list-group list-group-flush d-grid gap-3">
+      <li class="list-group-item fw-bold">
+        <div class="row">
+          <div class="col-3"><h6>DoseName:</h6></div>
+          <div class="col-3"><h6><%= prescription.dose_name %></h6></div>
+        </div>
+      </li>
+      <li class="list-group-item fw-bold">
+        <div class="row">
+          <div class="col-3"><h6>Dose Frequency:</h6></div>
+          <div class="col-3"><h6><%= prescription.dosage_frequency %></h6></div>
+        </div>
+      </li>
+      <li class="list-group-item fw-bold">
+        <div class="row">
+          <div class="col-3"><h6>Dose Detail:</h6></div>
+          <div class="col-3"><h6><%= prescription.dose_detail %></h6></div>
+        </div>
+      </li>
+    </ul>
+  </div>
 <% end %>
-<div><%= link_to "Add New Prescription", new_patient_appointment_visit_prescription_path, class: "btn btn-warning" %>
-  <%= link_to "Print Prescription", patient_appointment_visit_prescription_path(format: :pdf), class: "btn btn-primary" %>
+<div class="row">
+  <div class="col-3"><%= link_to "Add New Prescription", new_patient_appointment_visit_prescription_path, class: "btn btn-warning" %></div>
+  <div class="col-3"><%= link_to "Print Prescription", patient_appointment_visit_prescription_path(format: :pdf), class: "btn btn-primary" %></div>
+  <div class="col-3"><%= button_to "Back", root_path, method: :get, class: "btn btn-secondary" %></div>
 </div>
-
