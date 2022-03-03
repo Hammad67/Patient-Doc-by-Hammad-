@@ -3,7 +3,7 @@ class CreateAppointment
 
   def call
     appointment = Appointment.new(context.appointment_params)
-    appointment.doctor_id = context.currentdoctor_id
+    appointment.doctor_id = context.current_doctor_id
     appointment.patient_id = context.patient_id
     context.appointment = appointment
     context.fail! unless appointment.save
