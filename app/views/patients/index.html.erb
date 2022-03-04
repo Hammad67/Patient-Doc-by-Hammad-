@@ -1,7 +1,7 @@
 <div class="container">
-  <%= form_tag '/patients', method: 'get', remote:true, class: 'form-inline' do %>
+  <%= form_tag(patients_path, method: 'get', remote: true) do %>
     <div class="form-group">
-      <%= text_field_tag :params[:patinet_name], class: 'form-control', autofocus: true %>
+      <%= text_field_tag :patient_name,params[:patient_name], class: 'form-control', autofocus: true %>
 
     <%= submit_tag "Search!", class: 'btn btn-success' %>
     <%= link_to "Cancel", root_path, class: 'btn btn-default btn-lg' %>

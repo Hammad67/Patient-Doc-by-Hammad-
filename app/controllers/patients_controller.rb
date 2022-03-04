@@ -2,9 +2,14 @@ class PatientsController < ApplicationController
   before_action :get_patient, only: [:show, :edit, :update]
 
   def index
-
-    @patient = Patient.all
-    binding.pry
+    if params[:patient_name].present?
+      @patient = Patient.where(first_name: "#{params[:patient_name]}")
+      respond_to do |format|
+        format.js {render partial: 'patients/index'}
+      end
+    else
+      @patient = Patient.all
+    end
   end
 
   def show
