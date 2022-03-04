@@ -2,7 +2,9 @@ class PatientsController < ApplicationController
   before_action :get_patient, only: [:show, :edit, :update]
 
   def index
+
     @patient = Patient.all
+    binding.pry
   end
 
   def show
