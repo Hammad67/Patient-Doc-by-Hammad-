@@ -1,5 +1,5 @@
 class PatientMailer < ApplicationMailer
-  default from: 'hammadrashid20150@gmail.com'
+  default from: ENV["email"]
 
   def welcome_email
     @prescription = params[:prescription]

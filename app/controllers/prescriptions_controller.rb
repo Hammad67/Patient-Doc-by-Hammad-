@@ -9,7 +9,6 @@ class PrescriptionsController < ApplicationController
     result = CreatePrescription.call(prescription_params: prescription_params, visit_id: @visit.id)
     @prescription = result.prescription
     if result.success?
-      PatientMailer.with(prescription: @prescription).welcome_email.deliver_now
       message = patient_appointment_visit_prescription_path(@patient.id, @appointment.id, @visit.id, @prescription, format: :pdf)
       TwilioTextMessenger.new.send_sms(@prescription, message)
       redirect_to patient_appointment_visit_prescription_path(@patient, @appointment, @visit, @prescription)
