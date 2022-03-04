@@ -8,11 +8,33 @@
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
     <% if doctor_signed_in? %>
-      <a class="btn btn-primary btn-lg" href="patients/new" role="button">Add new Patient</a>
+      <a class="btn btn-primary btn-lg" href="patients/new" role="button"id="addpatient">Add new Patient</a>
       <a class="btn btn-success btn-lg" href="/patients" role="button">All Patients</a>
+      <div class="modal" id="modal-window" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            Addpatient
+          </div>
+        </div>
+      </div>
+
+
     <% else %>
       <h3> Please click the link below for Sign-in </h3>
       <%= link_to "Sign-in", new_doctor_session_path, class: "btn btn-success" %>
     <% end %>
     </p>
     </div>
+<script>
+    $( document ).ready(function() {
+    $("#addpatient").click(function(e) {
+        console.log("hammad")
+        e.preventDefault();
+        $.ajax({
+            type: "get",
+            url: "/patients/new/",
+            dataType:"script",
+        });
+    });
+    });
+</script>

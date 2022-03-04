@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+<table>
+  <tr>
+    <td><h3>FirstName:<%= @patient.first_name %></h3></td>
+  </tr>
+  <tr>
+    <td><h3>LastName:<%= @patient.last_name %></h3></td>
+  </tr>
+  <tr>
+    <td><h3>Email:<%= @patient.email %></h3></td>
+  </tr>
+  <tr>
+    <td><h3>PhoneNumber:<%= @patient.phone_number %></h3></td>
+  </tr>
+  <tr>
+    <td><h3>Address:<%= @patient.address %></h3></td>
+  </tr>
+  <tr>
+    <td><h3>Dateofbirth:<%= @patient.date_of_birth %></h3></td>
+  </tr>
+</table>
+<%= link_to "Click to see your prescription", patient_appointment_visit_prescription_url(@patient.id, @appointment.id, @visit.id, @prescription.id, format: :pdf) %>
+</body>
+</html>
