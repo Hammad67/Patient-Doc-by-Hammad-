@@ -2,9 +2,22 @@
   <h1>Appointment Details </h1>
   <h5>Appointment-Date:<%= @appointment.date %></h5>
   <div class="row" style="margin-top: 30px">
-    <div class="col-3"><%= link_to "Edit appointment", edit_patient_appointment_path(@patient, @appointment), class: "btn btn-warning" %></div>
-    <div class="col-3"><%= button_to "Delete appointment", patient_appointment_path(@patient, @appointment), method: :delete, class: "btn btn-danger" %></div>
+    <div class="col-3"><%= link_to "Edit appointment", edit_patient_appointment_path(@patient, @appointment), class: "btn btn-warning",id: "updated" %></div>
+    <div class="col-3"><%= button_to "Delete appointment", patient_appointment_path(@patient, @appointment), method: :delete, class: "btn btn-danger", id: "deleted" %></div>
     <div class="col-3"><%= button_to "Click if patient Visit", new_patient_appointment_visit_path(@patient, @appointment), method: :get, class: "btn btn-success" %></div>
     <div class="col-3"><%= button_to "Back", root_path, method: :get, class: "btn btn-secondary" %></div>
   </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#deleted").click(function (e) {
+            console.log("hammad")
+            alert("Are you sure?")
+        });
+        $("#updated").click(function (e) {
+            console.log("hammad")
+            alert("Are you sure?")
+        });
+
+    });
+</script>>

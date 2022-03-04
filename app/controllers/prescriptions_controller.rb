@@ -9,8 +9,7 @@ class PrescriptionsController < ApplicationController
     result = CreatePrescription.call(prescription_params: prescription_params, visit_id: @visit.id)
     @prescription = result.prescription
     if result.success?
-      message = patient_appointment_visit_prescription_path(@patient.id, @appointment.id, @visit.id, @prescription, format: :pdf)
-      TwilioTextMessenger.new.send_sms(@prescription, message)
+      send_message
       redirect_to patient_appointment_visit_prescription_path(@patient, @appointment, @visit, @prescription)
     else
       render :new, status: :unprocessable_entity
@@ -39,5 +38,10 @@ class PrescriptionsController < ApplicationController
     @patient = Patient.find(params[:patient_id])
     @appointment = Appointment.find(params[:appointment_id])
     @visit = Visit.find(params[:visit_id])
+  end
+
+  def send_message
+    message = patient_appointment_visit_prescription_path(@patient.id, @appointment.id, @visit.id, @prescription, format: :pdf)
+    SendMessageJob.perform_later(prescription: @prescription, message: message)
   end
 end

@@ -1,7 +1,7 @@
 <%= simple_form_for [@patient, @medical_record] do |f| %>
   <% if @medical_record.errors.full_messages.any? %>
-    <% @medical.errors.full_messages.each do |error_message| %>
-      <p class="text-danger"><%= error_message %> <br/>
+    <% @medical_record.errors.full_messages.each do |error_message| %>
+      <p class="alert alert-danger"><%= error_message %> <br/>
       </p>
     <% end %>
   <% end %>

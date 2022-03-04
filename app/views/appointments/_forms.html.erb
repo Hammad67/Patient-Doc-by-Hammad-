@@ -2,6 +2,14 @@
 <div class="card card p-3 bg-light card-body ">
     <%= simple_form_for [@patient, @appointment] do |f| %>
       <%= f.input :date %>
-      <div class="d-flex justify-content-center"><%= f.submit "Update Appointment", class: "btn btn-success " %></div>
+      <div class="d-flex justify-content-center"><%= f.submit "Update Appointment", class: "btn btn-success ",id:"updated" %></div>
     <% end %>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#updated").click(function (e) {
+            console.log("hammad")
+            alert("Are you sure?")
+        });
+    });
+</script>
