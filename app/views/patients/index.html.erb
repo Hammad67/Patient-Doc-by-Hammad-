@@ -1,11 +1,15 @@
 <div class="container">
-  <%= form_tag(patients_path, method: 'get', remote: true) do %>
-    <div class="form-group">
-      <%= text_field_tag :patient_name,params[:patient_name], class: 'form-control', autofocus: true %>
+  <%#= form_tag(patients_path, method: 'get', remote: true) do %>
+<!--    <div class="form-group">-->
+      <%#= text_field_tag :patient_name,params[:patient_name], class: 'form-control', autofocus: true %>
 
-    <%= submit_tag "Search!", class: 'btn btn-success' %>
-    <%= link_to "Cancel", root_path, class: 'btn btn-default btn-lg' %>
-  <% end %>
+    <%#= submit_tag "Search!", class: 'btn btn-success' %>
+    <%#= link_to "Cancel", root_path, class: 'btn btn-default btn-lg' %>
+  <%# end %>
+  <%= form_for :anything, url: "/patients",method:"get",local:false do |form| %>
+    <%= form.text_field :patient_name %>
+    <%= form.submit  %>
+  <% end  %>
 </div>
 
 <h1>Patients</h1>

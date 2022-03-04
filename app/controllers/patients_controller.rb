@@ -5,7 +5,8 @@ class PatientsController < ApplicationController
     if params[:patient_name].present?
       @patient = Patient.where(first_name: "#{params[:patient_name]}")
       respond_to do |format|
-        format.js {render partial: 'patients/index'}
+        format.js   {  }
+        format.html { }
       end
     else
       @patient = Patient.all
