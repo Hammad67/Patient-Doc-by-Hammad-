@@ -7,3 +7,4 @@ module Patientdoc
     config.active_job.queue_adapter = :sidekiq
   end
 end
+
