@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 2022_02_10_112055) do
     t.index ["patient_id"], name: "index_medical_records_on_patient_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.integer "doctor_id", null: false
+    t.integer "room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doctor_id"], name: "index_messages_on_doctor_id"
+    t.index ["room_id"], name: "index_messages_on_room_id"
+  end
+
   create_table "prescriptions", force: :cascade do |t|
     t.string "dose_name"
     t.string "dosage_frequency"
@@ -69,6 +79,12 @@ ActiveRecord::Schema.define(version: 2022_02_10_112055) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["visit_id"], name: "index_prescriptions_on_visit_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -95,6 +111,8 @@ ActiveRecord::Schema.define(version: 2022_02_10_112055) do
   add_foreign_key "appointments", "users", column: "doctor_id"
   add_foreign_key "appointments", "users", column: "patient_id"
   add_foreign_key "medical_records", "users", column: "patient_id"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users", column: "doctor_id"
   add_foreign_key "prescriptions", "visits"
   add_foreign_key "visits", "appointments"
 end
