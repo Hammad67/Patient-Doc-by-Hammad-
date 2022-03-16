@@ -5,8 +5,8 @@ class PatientsController < ApplicationController
     if params[:patient_name].present?
       @patient = Patient.where(first_name: "#{params[:patient_name]}")
       respond_to do |format|
-        format.js   {  }
-        format.html { }
+        format.js {}
+        format.html {}
       end
     else
       @patient = Patient.all
@@ -39,7 +39,7 @@ class PatientsController < ApplicationController
   end
 
   def update
-    if @patient.update(article_params)
+    if @patient.update(patient_params)
       redirect_to @patient
     else
       render :edit, status: :unprocessable_entity

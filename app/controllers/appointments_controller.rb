@@ -2,6 +2,10 @@ class AppointmentsController < ApplicationController
   before_action :get_patient, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :get_appointment, only: [:show, :edit, :update, :destroy]
 
+  def index
+
+  end
+
   def new
     @appointment = @patient.appointments.build
   end
