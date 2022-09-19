@@ -1,4 +1,4 @@
 
-web: bundle exec puma -C config/puma.rb && rails db:create && rails db:migrate && rails db:seed
+web: bundle exec puma -C config/puma.rb && bundle install && rails db:create && rails db:migrate && rails db:seed
 
 
